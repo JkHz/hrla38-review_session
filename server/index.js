@@ -4,14 +4,16 @@ const bodyparser = require('body-parser');
 const path = require('path');
 const router = require('./router');
 
-const server = express();
+const app = express();
 const port = 3000;
 
-server.use(morgan('dev'));
-server.use(bodyparser.json());
-server.use(bodyparser.urlencoded({ extended: true }));
+app.use(morgan('dev'));
+app.use(bodyparser.json());
+app.use(bodyparser.urlencoded({ extended: true }));
 
-server.use(express.static(path.join(__dirname, '../client/dist')));
+app.use(express.static(path.join(__dirname, '../client/dist')));
+
+app.use('/api', router);
 
 
-server.listen(port, () => console.log(`listening on ${port}`))
+app.listen(port, () => console.log(`listening on ${port}`))

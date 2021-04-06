@@ -1,36 +1,11 @@
 import React from 'react';
 import ListElement from './ListElement.jsx';
 
-const List = () =>
+const List = (props) =>
   <div>
-    <span>
-      <div>CJ</div>
-      <img src='https://ca.slack-edge.com/T2SV1LBC6-U016VP01D7A-7082f39c391f-512'></img>
-    </span>
-    <span>
-      <div>CJ</div>
-      <img src='https://ca.slack-edge.com/T2SV1LBC6-U016VP01D7A-7082f39c391f-512'></img>
-    </span>
-    <span>
-      <div>CJ</div>
-      <img src='https://ca.slack-edge.com/T2SV1LBC6-U016VP01D7A-7082f39c391f-512'></img>
-    </span>
-    <span>
-      <div>CJ</div>
-      <img src='https://ca.slack-edge.com/T2SV1LBC6-U016VP01D7A-7082f39c391f-512'></img>
-    </span>
-    <span>
-      <div>CJ</div>
-      <img src='https://ca.slack-edge.com/T2SV1LBC6-U016VP01D7A-7082f39c391f-512'></img>
-    </span>
-    <span>
-      <div>CJ</div>
-      <img src='https://ca.slack-edge.com/T2SV1LBC6-U016VP01D7A-7082f39c391f-512'></img>
-    </span>
-    <span>
-      <div>CJ</div>
-      <img src='https://ca.slack-edge.com/T2SV1LBC6-U016VP01D7A-7082f39c391f-512'></img>
-    </span>
+    {props.students.map((student, i) => (
+      <ListElement student={student} key={i} getStudents={props.getStudents} />
+    ))}
   </div>
 
 
